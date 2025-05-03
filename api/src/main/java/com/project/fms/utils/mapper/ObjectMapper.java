@@ -1,8 +1,10 @@
 package com.project.fms.utils.mapper;
 
 import com.project.fms.dtos.EmployeeDTO;
+import com.project.fms.dtos.PrivilegeDTO;
 import com.project.fms.dtos.UserDTO;
 import com.project.fms.entity.Employee;
+import com.project.fms.entity.Privilege;
 import com.project.fms.entity.User;
 import org.mapstruct.Mapper;
 
@@ -17,4 +19,8 @@ public interface ObjectMapper {
     List<UserDTO> userListToDtoList(List<User> users);
 
     User userDtoToUser(UserDTO userDTO);
+
+    List<PrivilegeDTO> privilegeListToDtoList(List<Privilege> privileges);
+
+    Privilege privilegeDtoToPrivilege(PrivilegeDTO privilegeDTO);
 }
