@@ -30,7 +30,7 @@ public class PrivilegeController {
         return privilegeService.update(privilegeDTO);
     }
 
-    @DeleteMapping("{/id}")
+    @DeleteMapping("/{id}")
     public String delete(@PathVariable Integer id){
         return privilegeService.delete(id);
     }
