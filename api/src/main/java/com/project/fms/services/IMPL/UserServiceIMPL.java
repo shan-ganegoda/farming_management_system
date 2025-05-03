@@ -10,6 +10,7 @@ import com.project.fms.utils.mapper.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Stream;
@@ -56,6 +57,9 @@ public class UserServiceIMPL implements UserService {
         }
 
         User user = objectMapper.userDtoToUser(userDTO);
+        LocalDate localDate = LocalDate.now();
+        user.setDocreated(localDate);
+        user.setDolastupdated(localDate);
         userRepository.save(user);
         return userDTO;
     }
@@ -70,6 +74,9 @@ public class UserServiceIMPL implements UserService {
         }
 
         User user1 = objectMapper.userDtoToUser(userDTO);
+        LocalDate localDate = LocalDate.now();
+        user.setDocreated(userDTO.getDocreated());
+        user.setDolastupdated(localDate);
         userRepository.save(user1);
         return userDTO;
     }
