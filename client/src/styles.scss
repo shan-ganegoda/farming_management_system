@@ -1,2 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+
+
+.passwordbox::ng-deep input {
+  width: 20rem; /* or use Tailwind widths like 20rem ≈ w-80 */
+}

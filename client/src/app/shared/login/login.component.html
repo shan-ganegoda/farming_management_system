@@ -1,0 +1,40 @@
+<div class="w-full h-screen flex bg-green-100 justify-evenly items-center">
+
+  <div>
+    <img src="/farmhouse.png" alt="logo" class="w-[30rem] h-[30rem]">
+  </div>
+
+  <div class="w-[25rem] h-[35rem] bg-white rounded-lg flex flex-col justify-center items-center shadow-lg">
+    <div class="mb-5 flex flex-col text-center">
+      <h1 class="text-4xl font-bold mb-5 text-green-500">Rajapaksa Farms</h1>
+      <h1 class="text-2xl font-bold">Login</h1>
+    </div>
+    <form [formGroup]="authForm" (ngSubmit)="submitForm()">
+
+      <div class="p-fluid mb-5">
+        <p-floatlabel variant="on">
+          <input pInputText id="username" formControlName="username" autocomplete="off" class="w-80"/>
+          <label for="username">Username</label>
+        </p-floatlabel>
+      </div>
+
+      <div class="p-fluid mb-5">
+        <p-floatlabel variant="on" pStyleClass="passwordbox">
+          <p-password inputId="password" formControlName="password" autocomplete="off" fluid/>
+          <label for="password">Password</label>
+        </p-floatlabel>
+      </div>
+
+      <div>
+        <p-button label="Submit" type="submit" fluid/>
+      </div>
+
+      <div class="mt-5">
+        <p>Forgot Password? <a routerLink="/register" class="text-blue-500 cursor-pointer">Recover</a></p>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
