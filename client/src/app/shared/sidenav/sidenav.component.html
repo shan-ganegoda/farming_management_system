@@ -1,0 +1,110 @@
+<div class="w-full h-[100vh] p-3 bg-gray-100">
+
+  <div class="w-full h-[4rem] bg-black rounded-xl mb-3 overflow-hidden">
+    <img src="./cow.gif" alt="logo" class="w-full h-full " />
+    <div class="absolute left-13 top-15 flex flex-col">
+      <span class="font-lexend text-2xl font-bold text-black stroke-2 stroke-black">{{ today|date }}</span>
+      <span class="font-lexend text-xl font-bold text-black stroke-2 stroke-black">{{ timenow }}</span>
+    </div>
+  </div>
+
+  <div class="w-full h-fit rounded-xl mb-3 shadow-lg p-2">
+    <div>
+      <ul class="mt-2">
+
+        <li class="mb-1 group active ">
+          <a
+            routerLink="mbireport"
+            class="flex items-center py-2 px-4 mr-3 hover:bg-blue-300 rounded-lg"
+            routerLinkActive="bg-blue-500"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black" class="size-5">
+              <path fill-rule="evenodd"
+                    d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z"
+                    clip-rule="evenodd"/>
+            </svg>
+
+            <span class="text-sm ml-7 text-black">Home</span>
+          </a>
+        </li>
+
+        <li class="mb-1 group active ">
+          <a
+            routerLink="mbireport"
+            class="flex items-center py-2 px-4 mr-3 hover:bg-blue-300 rounded-lg"
+            routerLinkActive="bg-blue-500"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black" class="size-5">
+              <path fill-rule="evenodd"
+                    d="M2.5 3A1.5 1.5 0 0 0 1 4.5v4A1.5 1.5 0 0 0 2.5 10h6A1.5 1.5 0 0 0 10 8.5v-4A1.5 1.5 0 0 0 8.5 3h-6Zm11 2A1.5 1.5 0 0 0 12 6.5v7a1.5 1.5 0 0 0 1.5 1.5h4a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 17.5 5h-4Zm-10 7A1.5 1.5 0 0 0 2 13.5v2A1.5 1.5 0 0 0 3.5 17h6a1.5 1.5 0 0 0 1.5-1.5v-2A1.5 1.5 0 0 0 9.5 12h-6Z"
+                    clip-rule="evenodd"/>
+            </svg>
+
+
+            <span class="text-sm ml-7 text-black">Dashboard</span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <div class="w-full h-fit rounded-xl mb-3 shadow-lg p-2">
+    <!--SUBMISSION-START-->
+    <!--    @if (Admin || MohOfficer || PdOfficer) {-->
+    <div class=" w-full p-2.5 mt-2 flex items-center text-black rounded-md duration-300 cursor-pointer"
+         (click)="togglemenu1=!togglemenu1">
+      <div class="flex mt-1 mx-2.5">
+        <span class="text-sm text-black">Admin</span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black" class="size-5 -mt-0.5 relative ml-[5.8rem] {{togglemenu1 ? 'rotate-90' : 'rotate-0'}}">
+          <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+        </svg>
+      </div>
+
+    </div>
+    @if (togglemenu1) {
+      <div class="animate-drop">
+        <ul class="mt-2">
+
+          <li class="mb-1 group active ">
+            <a
+              routerLink="mbireport"
+              class="flex items-center py-2 px-4 mr-3 hover:bg-blue-300 rounded-lg"
+              routerLinkActive="bg-blue-500"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black" class="size-5">
+                <path fill-rule="evenodd"
+                      d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z"
+                      clip-rule="evenodd"/>
+              </svg>
+
+              <span class="text-sm ml-7 text-black">Home</span>
+            </a>
+          </li>
+
+          <li class="mb-1 group active ">
+            <a
+              routerLink="mbireport"
+              class="flex items-center py-2 px-4 mr-3 hover:bg-blue-300 rounded-lg"
+              routerLinkActive="bg-blue-500"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black" class="size-5">
+                <path fill-rule="evenodd"
+                      d="M2.5 3A1.5 1.5 0 0 0 1 4.5v4A1.5 1.5 0 0 0 2.5 10h6A1.5 1.5 0 0 0 10 8.5v-4A1.5 1.5 0 0 0 8.5 3h-6Zm11 2A1.5 1.5 0 0 0 12 6.5v7a1.5 1.5 0 0 0 1.5 1.5h4a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 17.5 5h-4Zm-10 7A1.5 1.5 0 0 0 2 13.5v2A1.5 1.5 0 0 0 3.5 17h6a1.5 1.5 0 0 0 1.5-1.5v-2A1.5 1.5 0 0 0 9.5 12h-6Z"
+                      clip-rule="evenodd"/>
+              </svg>
+
+
+              <span class="text-sm ml-7 text-black">Dashboard</span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    }
+    <!--    }-->
+    <!--SUBMISSION-END-->
+  </div>
+
+
+</div>
