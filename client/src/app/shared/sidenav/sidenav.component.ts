@@ -15,6 +15,7 @@ import {DatePipe} from '@angular/common';
 export class SidenavComponent {
 
   togglemenu1:boolean = false;
+  togglemenu2:boolean = false;
   today:any
   timenow:any
 

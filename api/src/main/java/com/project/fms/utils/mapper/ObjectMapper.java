@@ -23,4 +23,6 @@ public interface ObjectMapper {
     List<PrivilegeDTO> privilegeListToDtoList(List<Privilege> privileges);
 
     Privilege privilegeDtoToPrivilege(PrivilegeDTO privilegeDTO);
+
+    UserDTO userToUserDto(User user);
 }

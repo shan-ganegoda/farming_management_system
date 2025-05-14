@@ -25,4 +25,7 @@ public class Role {
     @OneToMany(mappedBy = "role")
     private Set<User> users = new LinkedHashSet<>();
 
+    @OneToMany(fetch = FetchType.EAGER,mappedBy = "role")
+    private Set<Privilege> privileges = new LinkedHashSet<>();
+
 }
