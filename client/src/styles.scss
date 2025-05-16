@@ -5,3 +5,6 @@
 .passwordbox::ng-deep input {
   width: 20rem; /* or use Tailwind widths like 20rem ≈ w-80 */
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
