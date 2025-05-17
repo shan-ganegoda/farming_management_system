@@ -1,1 +1,159 @@
-<p>employee works!</p>
+<div class="flex flex-col w-full">
+<div class="flex gap-2">
+  <span class="text-2xl font-bold">Employee</span>
+
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8">
+    <path fill-rule="evenodd" d="M8.25 6.75a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0ZM15.75 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM2.25 9.75a3 3 0 1 1 6 0 3 3 0 0 1-6 0ZM6.31 15.117A6.745 6.745 0 0 1 12 12a6.745 6.745 0 0 1 6.709 7.498.75.75 0 0 1-.372.568A12.696 12.696 0 0 1 12 21.75c-2.305 0-4.47-.612-6.337-1.684a.75.75 0 0 1-.372-.568 6.787 6.787 0 0 1 1.019-4.38Z" clip-rule="evenodd" />
+    <path d="M5.082 14.254a8.287 8.287 0 0 0-1.308 5.135 9.687 9.687 0 0 1-1.764-.44l-.115-.04a.563.563 0 0 1-.373-.487l-.01-.121a3.75 3.75 0 0 1 3.57-4.047ZM20.226 19.389a8.287 8.287 0 0 0-1.308-5.135 3.75 3.75 0 0 1 3.57 4.047l-.01.121a.563.563 0 0 1-.373.486l-.115.04c-.567.2-1.156.349-1.764.441Z" />
+  </svg>
+</div>
+
+  <p-breadcrumb class="max-w-full relative -ml-3" [model]="items" [home]="home" />
+
+</div>
+
+<mat-grid-list [cols]="12" rowHeight="4rem">
+
+<!--  Form Start-->
+  <mat-grid-tile [colspan]="4" [rowspan]="10">
+    <div class="w-full h-full bg-white mt-4 ml-2 rounded-xl shadow-2xl overflow-auto">
+
+      <div class="w-full h-[2.5rem] bg-[#1e4263] flex items-center rounded-tl-xl rounded-tr-xl">
+        <span class="ml-5 text-white text-lg ">Data Form</span>
+      </div>
+
+      <form class="mt-5 2-full px-2">
+
+        <div class="h-28 mb-8 flex flex-row items-center justify-center">
+          <img class="h-32 w-32 rounded-full border-2" src="{{imageempurl ? imageempurl : 'assets/tabledefault.png'}}">
+          <div class="flex flex-col mt-2">
+            <input  id="userImage" hidden="hidden" (change)="selectImage($event)" select type="file" >
+            <label for="userImage" class="btn ml-10 mb-2 text-white rounded-md text-center bg-gray-950 text-white w-28 hover:bg-gray-900">Select</label>
+            <label class="btn ml-10 mb-2 text-white rounded-md text-center bg-gray-950 text-white hover:bg-gray-900" (click)="clearImage()">Clear</label>
+          </div>
+        </div>
+
+          <div class="mb-2 p-fluid">
+            <p-floatlabel variant="on">
+              <input pInputText id="firstname" autocomplete="off" class="w-full"/>
+              <label for="firstname">First Name</label>
+            </p-floatlabel>
+          </div>
+
+          <div class="mb-2">
+            <p-floatlabel variant="on">
+              <input pInputText id="lastname" autocomplete="off" class="w-full"/>
+              <label for="lastname">Last Name</label>
+            </p-floatlabel>
+          </div>
+
+        <div class="mb-2">
+          <p-floatlabel variant="on">
+            <input pInputText id="nic" autocomplete="off" class="w-full"/>
+            <label for="nic">Nic</label>
+          </p-floatlabel>
+        </div>
+
+        <div class="mb-2">
+          <p-floatlabel variant="on">
+            <input pInputText id="empno" autocomplete="off" class="w-full"/>
+            <label for="empno">Employee Number</label>
+          </p-floatlabel>
+        </div>
+
+        <div class="mb-2">
+          <p-floatlabel variant="on">
+            <input pInputText id="mobile" autocomplete="off" class="w-full"/>
+            <label for="mobile">Mobile</label>
+          </p-floatlabel>
+        </div>
+
+        <div class="mb-2">
+          <p-floatlabel variant="on">
+            <input pInputText id="land" autocomplete="off" class="w-full"/>
+            <label for="land">Land</label>
+          </p-floatlabel>
+        </div>
+
+        <div class="mb-2">
+          <p-floatlabel variant="on">
+            <input pInputText id="email" autocomplete="off" class="w-full"/>
+            <label for="email">Email</label>
+          </p-floatlabel>
+        </div>
+
+        <div class="mb-2">
+          <p-select [options]="genders" optionLabel="name" placeholder="Select a Gender" class="w-full" />
+        </div>
+
+        <div class="mb-2">
+          <p-floatlabel variant="on">
+            <p-datepicker inputId="dob" showIcon iconDisplay="input" styleClass="w-full" />
+            <label for="dob">Date of Birth</label>
+          </p-floatlabel>
+        </div>
+
+        <div class="mb-2">
+          <p-select [options]="designations" optionLabel="name" placeholder="Select a Designation" class="w-full" />
+        </div>
+
+        <div class="mb-2">
+          <p-floatlabel variant="on">
+            <p-datepicker inputId="doassigned" showIcon iconDisplay="input" styleClass="w-full" />
+            <label for="doassigned">Date of Assigned</label>
+          </p-floatlabel>
+        </div>
+
+        <div class="mb-2">
+          <p-select [options]="employeestatuses" optionLabel="name" placeholder="Select a Employee Status" class="w-full" />
+        </div>
+
+        <div class="mb-2">
+          <p-select [options]="employeetypes" optionLabel="name" placeholder="Select a Employee Type" class="w-full" />
+        </div>
+
+        <div class="mb-4">
+          <p-floatlabel variant="on">
+            <textarea pTextarea id="description" rows="5" cols="30" style="resize: none" class="w-full"></textarea>
+            <label for="description">Description</label>
+          </p-floatlabel>
+        </div>
+
+        <div class="mb-4 w-full flex justify-center">
+          <div>
+        <p-buttonGroup class="w-full">
+          <p-button label="Save" icon="pi pi-check" />
+          <p-button label="Update" icon="pi pi-hammer" />
+          <p-button label="Delete" icon="pi pi-trash" />
+          <p-button label="Clear" icon="pi pi-times" />
+        </p-buttonGroup>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+  </mat-grid-tile>
+<!--  Form End-->
+<!--  Search Start-->
+  <mat-grid-tile [colspan]="8" [rowspan]="3">
+    <div class="w-full h-full bg-white mt-4 ml-2 rounded-xl shadow-2xl overflow-auto">
+
+      <div class="w-full h-[2.5rem] bg-[#1e4263] flex items-center rounded-tl-xl rounded-tr-xl">
+        <span class="ml-5 text-white text-lg ">Search</span>
+      </div>
+    </div>
+  </mat-grid-tile>
+<!--  Search End-->
+<!--  Table Start-->
+  <mat-grid-tile [colspan]="8" [rowspan]="7">
+    <div class="w-full h-full bg-white mt-4 ml-2 rounded-xl shadow-2xl overflow-auto">
+
+      <div class="w-full h-[2.5rem] bg-[#1e4263] flex items-center rounded-tl-xl rounded-tr-xl">
+        <span class="ml-5 text-white text-lg ">Data View</span>
+      </div>
+    </div>
+  </mat-grid-tile>
+<!--  Table End-->
+
+</mat-grid-list>
